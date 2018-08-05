@@ -29,7 +29,7 @@ if (welcomePrompt) {
 
 
 else {
-    document.write("goodbye bitch");
+    document.write("goodbye ");
 }
     // write a alert with a string of hellos
 
