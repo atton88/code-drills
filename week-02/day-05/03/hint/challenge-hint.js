@@ -11,7 +11,9 @@ function populateButtons() {
 
 
   // create the "Hello" button
-
+var buttonHello = $("<button>");
+buttonHello.text("Hello");
+buttonHello.attr("data", "Hello");
   
   // assign "Hello" to its data attribute
 
@@ -19,7 +21,9 @@ function populateButtons() {
 
   // create the "World" button
 
-  
+  var buttonWorld = $("<button>");
+  buttonWorld.text("World");
+  buttonWorld.attr("data", "World");
   // assign "World" to its data attribute
 
   
@@ -28,14 +32,19 @@ function populateButtons() {
 
   
   // assign "Reset" to its data attribute
-
+  var buttonReset = $("<button>");
+  buttonReset.text("Reset");
+  buttonReset.attr("data", "Reset");
   
 
   // create the "User" button
 
   
   // add an ide to the "User" button so we can refer to it later
-
+  var buttonUser = $("<button>");
+  buttonUser.text("User")
+  buttonUser.attr("id", "user-button")
+  buttonUser.attr("data", "");
 
   // instantiate the initial data attribute to be an empty string
 
@@ -43,7 +52,8 @@ function populateButtons() {
 
   // add the "Hello", "World", and "Reset" buttons to the "buttons-area"
 
-
+  $("#buttons-area").append(buttonHello, buttonWorld, buttonReset);
+  $("#user-button-area").append(buttonUser);
   // add the "User" button to the "user-button-area"
 
 
@@ -75,7 +85,9 @@ $(function () {
 
     // store the new key press history back into the "User" button
 
-
+    var keysPressed = $("#user-button").attr("data");
+    keysPressed += event.key;
+    $("#user-button").attr("data", keysPressed);
 
     // End of your code area
   }
@@ -92,13 +104,23 @@ $(function () {
 
 
     // if the data of the button is "Reset", we clear the output area
-
+    switch ($(this).attr("data")) {
+      case "Hello":
+      case "World":
+        $("#output").append($(this).attr("data"));
+        break;
+      case "Reset":
+        $("#output").empty()
+        break;
+      default:
+        $("#output").text($(this).attr("data"));
+        $(this).attr("data", "")
 
     // otherwise, it's the "User" button, so we set the output area's content
     // to be the data of the button and then clear the data stored within the
     // "User button"
 
-
+    }
 
     // End of your code area
   })
