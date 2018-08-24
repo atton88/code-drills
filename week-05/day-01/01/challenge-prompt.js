@@ -1,3 +1,4 @@
+// done
 // Activity 1
 
 
@@ -11,11 +12,13 @@
 // ----------------------------------------------------------
 function reverse(str) {
   // -------------------- Your Code Here --------------------
+  var splitArr = str.split(" ");
+  var revArr = [];
 
-
-
-
-
+  for (var i = splitArr.length - 1; i >= 0; i--) {
+    revArr.push(splitArr[i]);
+  }
+  return revArr.join(" ");
 
   // --------------------- End Code Area --------------------
 }
