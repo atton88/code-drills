@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Day 01</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link Bootstrap so we can use their nice looking forms and buttons! -->
+  
+  
+</head>
+<body>
+  <h1>Activity 01</h1>
+  <!-- Create a display area to display the user data -->
+    <div id=infoText></div>
+
+
+  <!-- Create a form with individual fields for the user's First Name, Last Name, Occupation, City, and State -->
+  <form>
+    First name:<br>
+    <input id="firstname" type="text" name="">
+    <br>
+    Last name:<br>
+    <input id="lastname" type="text" name="">
+    <br>
+    Occupation:<br>
+    <input id="occupation" type="occupation" name="">
+    <br>
+    City:<br>
+    <input id="city" type="city" name="">
+    <br>
+    State:<br>
+    <input id="state" type="state" name="">
+    <br><br>
+    <input type="button" value="Submit" onclick="update();">
+  </form>   <!-- Remember to give each of the input areas a unique id so we can easily pull the values off the forms -->
+
+<script>
+  function update() {
+    $("#infoText").html("<h3> " + $("#firstname").val() + " " + $("#lastname").val() + "</h3>");
+    $("#infoText").append("<h4> " + $("#occupation").val() + "</h4>");
+    $("#infoText").append("<h4> " + $("#city").val() + ", " + $("#state").val() + "</h4>");
+
+  }
+
+
+
+</script>
+  
+  <!-- Link jQuery so we can interact with the DOM easily -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <!-- Link our javascript file -->
+  
+  <script src="challenge-prompt.js"></script>
+
+</body>
+</html>
