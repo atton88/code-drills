@@ -1,3 +1,5 @@
+// done
+
 // Activity 2
 
 
@@ -11,7 +13,14 @@
 
 
 
-
+function isPrime(num){
+  for (var j = 2; j < num; j++){
+    if (num % j === 0){
+      return false;
+    }
+  }
+  return true;
+}
 
 // --------------------- End Code Area --------------------
 
@@ -22,16 +31,22 @@
 // ----------------------------------------------------------
 function primeFactors(num) {
   // -------------------- Your Code Here --------------------
-
-
+var arr = [];
+for (var i = 2; i <= num; i++){
+  
+  if (num % i === 0) {
+    if (isPrime(i)){
+      arr.push(i);
+    }
+}
 
 
 
 
   // --------------------- End Code Area --------------------
 }
-
-
+return arr;
+}
 
 
 // --------------------------- Test Cases ---------------------------

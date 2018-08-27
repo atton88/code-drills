@@ -13,7 +13,17 @@
 function zipArrays(arr1, arr2) {
   // -------------------- Your Code Here --------------------
 
-
+  if (arr1.length > arr2.length) {
+    for (var i = 0; i < arr2.length; i++) {
+      arr1[i] += arr2[i];
+    }
+    return arr1;
+  } else {
+    for (var i = 0; i < arr1.length; i++) {
+      arr2[i] += arr1[i];
+    }
+    return arr2;
+  }
 
 
 
